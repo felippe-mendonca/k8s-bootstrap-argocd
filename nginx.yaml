@@ -11,6 +11,11 @@ spec:
     repoURL: 'https://helm.nginx.com/stable'
     targetRevision: '0.4.1'
     chart: nginx-ingress
+    helm:
+      values: |
+        controller:
+          service:
+            create: false
   project: default
   syncPolicy:
     automated:
