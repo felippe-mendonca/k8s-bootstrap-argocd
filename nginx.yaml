@@ -12,10 +12,10 @@ spec:
     targetRevision: '0.4.1'
     chart: nginx-ingress
   project: default
-  syncOptions:
-  - CreateNamespace=true
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
 
