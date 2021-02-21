@@ -18,9 +18,9 @@ spec:
     chart: argo-cd
     helm:
       values: |
-        config:
-          server:
-            repositories: |
+       server:
+         config:
+           repositories: |
               - type: helm
                 url: https://argoproj.github.io/argo-helm
                 name: argocd
