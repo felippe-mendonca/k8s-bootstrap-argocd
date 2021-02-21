@@ -24,4 +24,8 @@ spec:
               - type: helm
                 url: https://argoproj.github.io/argo-helm
                 name: argocd
+              - type: helm
+                url: https://helm.nginx.com/stable
+                name: stable
               - url: https://github.com/felippe-mendonca/k8s-bootstrap-argocd-apps
+
