@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    repoURL: 'https://argoproj.github.io/argo-helm'
+    targetRevision: '2.14.6'
+    chart: argo-cd
+    helm:
+      values: |
+        config:
+          server:
+            repositories: |
+              - type: helm
+                url: https://argoproj.github.io/argo-helm
+                name: argocd
+              - url: https://github.com/felippe-mendonca/k8s-bootstrap-argocd-apps
